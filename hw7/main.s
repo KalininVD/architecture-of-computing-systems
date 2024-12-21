@@ -26,20 +26,20 @@ main:
 	li s2 32 # number of digits to display (currently 32)
 
 print_loop:
-	li a0 1 # clear the right indicator
+	li a0 1 # clear the left indicator
 	jal clear_indicator
 
 	mv a0 s1 # move the digit to the a0 register
-	li a1 0 # print the digit to the left indicator
+	li a1 0 # print the digit to the right indicator
 	jal display_digit
 
 	sleep(1000) # sleep for 1 second
 
-	li a0 0 # clear the left indicator
+	li a0 0 # clear the right indicator
 	jal clear_indicator
 
 	mv a0 s1 # move the digit to the a0 register
-	li a1 1 # print the digit to the right indicator
+	li a1 1 # print the digit to the left indicator
 	jal display_digit
 
 	sleep(1000) # sleep for 1 second
